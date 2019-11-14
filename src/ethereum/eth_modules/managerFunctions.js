@@ -29,39 +29,48 @@ const signAndSendTransaction = async (senderPrivateKey, to, encodeABI, gas) => {
     };
 
     let signed = await web3.eth.accounts.signTransaction(transaction, pk);
-    let trn = await web3.eth.sendSignedTransaction(signed.rawTransaction);
-    return trn;
+    let trn = web3.eth.sendSignedTransaction(signed.rawTransaction);
+    return new Promise(function(resolve, reject) {
+        trn.once('transactionHash', hash => {
+            trn.off('error');
+            resolve({ txHash: hash });
+        });
+        trn.once('error', error => {
+            reject(error);
+        });
+    });
+    //return trn;
 };
 
 const send = async (tr) => {
     return await signAndSendTransaction(privateKey, contractAddress, tr.encodeABI(), 300000);
 };
 
-export async function newGame(dice1, dice2) {
+const newGame = async (dice1, dice2) => {
     if (dice1 < 1 || dice1 > 6 || dice2 < 1 || dice2 > 6) return false;
     const tr = contract.methods.newGame(dice1, dice2);
-    return await send(tr);
-}
+    return await signAndSendTransaction(privateKey, contractAddress, tr.encodeABI(), 300000);
+};
 
-export async function transferMoneyToServer(money) {
+const transferMoneyToServer = async (money) => {
     if (Number(money) < 0) return false;
     const tr = contract.methods.transferMoneyToServer(money);
     return await send(tr);
-}
+};
 
-export async function getAllRequiredMoney() {
+const getAllRequiredMoney = async () => {
     const tr = contract.methods.getAllRequiredMoney();
     return await send(tr);
-}
+};
 
-export async function setNextGameMinimumBet(nextGameMinimumBet) {
+const setNextGameMinimumBet = async (nextGameMinimumBet) => {
     const tr = contract.methods.setNextGameMinimumBet(nextGameMinimumBet);
     return await send(tr);
-}
+};
 
-export async function setNextGameMaximumBet(nextGameMaximumBet) {
+const setNextGameMaximumBet = async (nextGameMaximumBet) => {
     const tr = contract.methods.setNextGameMaximumBet(nextGameMaximumBet);
     return await send(tr);
-}
+};
 
-export default {newGame, transferMoneyToServer, getAllRequiredMoney, setNextGameMinimumBet, setNextGameMaximumBet}
+export {newGame, transferMoneyToServer, getAllRequiredMoney, setNextGameMinimumBet, setNextGameMaximumBet};

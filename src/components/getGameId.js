@@ -8,7 +8,8 @@ class GameId extends React.Component {
         gameId: null
     };
 
-    getBalance = async () => {
+    getGameId = async () => {
+
         const gameId = Number(await diceGame.methods.gameId().call({ from: '0xCE2496baff9b404b9C8f5445B48bA92441ed6B33' }));
         this.setState({gameId});
     };
@@ -25,7 +26,7 @@ class GameId extends React.Component {
 
         return (
             <div>
-                <Button onClick={this.getBalance}>Get Game Id</Button>
+                <Button onClick={this.getGameId}>Get Game Id</Button>
                 <span style={style}>{gameId}</span>
             </div>
         );
