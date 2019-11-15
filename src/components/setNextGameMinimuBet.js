@@ -23,8 +23,8 @@ class SetNextGameMinimumBet extends React.Component {
         return (
             <div>
                 <Form onSubmit={this.getMoney}>
-                    <Input placeholder='money' onChange={this.handleInputChange}/>
-                    <Button type='submit' primary>Set Next Game Maximum Bet</Button>
+                    <Input placeholder='minimum bet' onChange={this.handleInputChange}/>
+                    <Button type='submit' primary>Set Next Game Minimum Bet</Button>
                 </Form>
             </div>
         );

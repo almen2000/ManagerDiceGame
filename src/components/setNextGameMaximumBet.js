@@ -23,7 +23,7 @@ class SetNextGameMaximumBet extends React.Component {
         return (
             <div>
                 <Form onSubmit={this.getMoney}>
-                    <Input placeholder='money' onChange={this.handleInputChange}/>
+                    <Input placeholder='maximum bet' onChange={this.handleInputChange}/>
                     <Button type='submit' primary>Set Next Game Maximum Bet</Button>
                 </Form>
             </div>

@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2c4e9ed1-10dd-4004-82c8-d12ef10bd2d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/getGameId.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/getGameId.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/setNewGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/setNewGame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ethereum/eth_modules/managerFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ethereum/eth_modules/managerFunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/setNextGameMaximumBet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/setNextGameMaximumBet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/setNextGameMinimuBet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/setNextGameMinimuBet.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +21,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DiceGame" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../example" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -60,7 +60,7 @@
       <updated>1573651991619</updated>
       <workItem from="1573651992712" duration="7751000" />
       <workItem from="1573735322052" duration="25000" />
-      <workItem from="1573735477563" duration="4084000" />
+      <workItem from="1573735477563" duration="7881000" />
     </task>
     <servers />
   </component>

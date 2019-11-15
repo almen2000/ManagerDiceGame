@@ -34,8 +34,8 @@ class NewGame extends React.Component {
         return (
             <div>
                 <Form onSubmit={this.getMoney}>
-                    <Input placeholder='money' onChange={this.handleInput1Change}/>
-                    <Input placeholder='money' onChange={this.handleInput2Change}/>
+                    <Input placeholder='dice 1' onChange={this.handleInput1Change}/>
+                    <Input placeholder='dice 2' onChange={this.handleInput2Change}/>
                     <Button type='submit' primary>New Game</Button>
                 </Form>
             </div>
